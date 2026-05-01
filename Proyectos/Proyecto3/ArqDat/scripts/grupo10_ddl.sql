@@ -7,12 +7,13 @@
 -- Proyecto: P3 - Gestion de Datos Maestros y Arquitectura de Datos
 -- Marco: UNE 0078 - ArqDat
 -- Fecha: 2026-05-01
+-- Nota: FK omitidas por permisos REFERENCES en Spartan (integridad gestionada en capa MDM)
 -- =============================================================
 
 USE Grupo10;
 
 -- =============================================================
--- TABLAS DE REFERENCIA (sin dependencias FK)
+-- TABLAS DE REFERENCIA
 -- =============================================================
 
 CREATE TABLE IF NOT EXISTS ref_tipo_cliente (
@@ -88,13 +89,12 @@ INSERT INTO ref_estado_matching (codigo, etiqueta, descripcion) VALUES
 
 -- =============================================================
 -- DIMENSION: ZONA GEOGRAFICA
--- Sin FK, debe crearse antes que dim_punto_suministro
 -- =============================================================
 
 CREATE TABLE IF NOT EXISTS dim_zona_geografica (
     codigo_zona        VARCHAR(10)  NOT NULL COMMENT 'Formato ZN-[A-Z]{3}-[0-9]{3}',
     nombre             VARCHAR(100) NOT NULL COMMENT 'Nombre descriptivo de la zona',
-    estacion_aemet_ref VARCHAR(10)      NULL COMMENT 'Codigo de estacion AEMET de referencia para datos meteorologicos',
+    estacion_aemet_ref VARCHAR(10)      NULL COMMENT 'Codigo de estacion AEMET de referencia',
     CONSTRAINT pk_dim_zona_geografica PRIMARY KEY (codigo_zona)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
   COMMENT='Dimension de zonas geograficas de distribucion. Ref: G10-020 / DT-101-06';
@@ -109,16 +109,14 @@ CREATE TABLE IF NOT EXISTS maestro_cliente (
     id_nacional        VARCHAR(20)      NULL COMMENT 'DNI o NIE. Clave de matching RM-01. UNIQUE cuando no es NULL',
     id_cliente_token   VARCHAR(64)  NOT NULL COMMENT 'SHA256(id_cliente_maestro + salt). Circula en el pipeline analitico',
     nombre_normalizado VARCHAR(100) NOT NULL COMMENT 'Nombre canonico tras proceso de limpieza MDM',
-    tipo_cliente       VARCHAR(20)  NOT NULL COMMENT 'FK -> ref_tipo_cliente. Dom: {RES, IND, CRIT}',
+    tipo_cliente       VARCHAR(20)  NOT NULL COMMENT 'Dom: {RES, IND, CRIT}. Ref: ref_tipo_cliente',
     sla_reforzado      TINYINT(1)   NOT NULL DEFAULT 0 COMMENT 'TRUE (1) si tipo_cliente = CRIT',
-    estado             VARCHAR(20)  NOT NULL DEFAULT 'ACTIVO' COMMENT 'FK -> ref_estado_cliente',
+    estado             VARCHAR(20)  NOT NULL DEFAULT 'ACTIVO' COMMENT 'Ref: ref_estado_cliente',
     email_verificado   VARCHAR(150)     NULL COMMENT 'Email normalizado. Clave de matching RM-02',
     fecha_alta_maestra DATE         NOT NULL COMMENT 'Fecha de creacion del golden record',
-    CONSTRAINT pk_maestro_cliente     PRIMARY KEY (id_cliente_maestro),
-    CONSTRAINT uq_mc_token            UNIQUE (id_cliente_token),
-    CONSTRAINT uq_mc_id_nacional      UNIQUE (id_nacional),
-    CONSTRAINT fk_mc_tipo_cliente     FOREIGN KEY (tipo_cliente) REFERENCES ref_tipo_cliente(codigo),
-    CONSTRAINT fk_mc_estado           FOREIGN KEY (estado)       REFERENCES ref_estado_cliente(codigo)
+    CONSTRAINT pk_maestro_cliente PRIMARY KEY (id_cliente_maestro),
+    CONSTRAINT uq_mc_token        UNIQUE (id_cliente_token),
+    CONSTRAINT uq_mc_id_nacional  UNIQUE (id_nacional)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
   COMMENT='Golden record MDM de la entidad Cliente. Ref: G10-003/004/005 / DT-101';
 
@@ -129,15 +127,13 @@ CREATE TABLE IF NOT EXISTS maestro_cliente (
 
 CREATE TABLE IF NOT EXISTS mapeo_ids_legados (
     id_mapeo           BIGINT       NOT NULL AUTO_INCREMENT,
-    id_cliente_maestro CHAR(36)     NOT NULL COMMENT 'FK -> maestro_cliente',
+    id_cliente_maestro CHAR(36)     NOT NULL COMMENT 'Ref: maestro_cliente',
     sistema_origen     VARCHAR(30)  NOT NULL COMMENT 'CRM, SAP-ISU o ERP',
     id_legado          VARCHAR(30)  NOT NULL COMMENT 'ID original en el sistema fuente',
-    estado_matching    VARCHAR(30)  NOT NULL COMMENT 'FK -> ref_estado_matching',
+    estado_matching    VARCHAR(30)  NOT NULL COMMENT 'Ref: ref_estado_matching',
     ts_creacion        TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha de la fusion',
-    CONSTRAINT pk_mapeo_ids_legados   PRIMARY KEY (id_mapeo),
-    CONSTRAINT uq_mapeo_sistema_id    UNIQUE (sistema_origen, id_legado),
-    CONSTRAINT fk_mil_cliente_maestro FOREIGN KEY (id_cliente_maestro) REFERENCES maestro_cliente(id_cliente_maestro),
-    CONSTRAINT fk_mil_estado_matching FOREIGN KEY (estado_matching)    REFERENCES ref_estado_matching(codigo)
+    CONSTRAINT pk_mapeo_ids_legados PRIMARY KEY (id_mapeo),
+    CONSTRAINT uq_mapeo_sistema_id  UNIQUE (sistema_origen, id_legado)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
   COMMENT='Trazabilidad de IDs de sistemas fuente hacia el golden record MDM';
 
@@ -148,17 +144,13 @@ CREATE TABLE IF NOT EXISTS mapeo_ids_legados (
 
 CREATE TABLE IF NOT EXISTS dim_punto_suministro (
     cups                VARCHAR(22)    NOT NULL COMMENT 'Formato ES[0-9]{16}[A-Z]{2}. Estandar REE',
-    id_cliente_token    VARCHAR(64)    NOT NULL COMMENT 'FK -> maestro_cliente (campo token). Cliente titular seudonimizado',
-    codigo_zona         VARCHAR(10)    NOT NULL COMMENT 'FK -> dim_zona_geografica',
+    id_cliente_token    VARCHAR(64)    NOT NULL COMMENT 'Ref: maestro_cliente. Cliente titular seudonimizado',
+    codigo_zona         VARCHAR(10)    NOT NULL COMMENT 'Ref: dim_zona_geografica',
     potencia_contratada DECIMAL(6,2)   NOT NULL COMMENT 'Potencia maxima en kW. > 0',
     fecha_alta          DATE           NOT NULL COMMENT 'Alta del punto de suministro',
-    estado              VARCHAR(20)    NOT NULL DEFAULT 'ACTIVO' COMMENT 'FK -> ref_estado_cups',
-    CONSTRAINT pk_dim_punto_suministro  PRIMARY KEY (cups),
-    CONSTRAINT chk_cups_formato         CHECK (cups REGEXP '^ES[0-9]{16}[A-Z]{2}$'),
-    CONSTRAINT chk_potencia_positiva    CHECK (potencia_contratada > 0),
-    CONSTRAINT fk_dps_cliente_token     FOREIGN KEY (id_cliente_token) REFERENCES maestro_cliente(id_cliente_token),
-    CONSTRAINT fk_dps_zona              FOREIGN KEY (codigo_zona)       REFERENCES dim_zona_geografica(codigo_zona),
-    CONSTRAINT fk_dps_estado            FOREIGN KEY (estado)            REFERENCES ref_estado_cups(codigo)
+    estado              VARCHAR(20)    NOT NULL DEFAULT 'ACTIVO' COMMENT 'Ref: ref_estado_cups',
+    CONSTRAINT pk_dim_punto_suministro PRIMARY KEY (cups),
+    CONSTRAINT chk_potencia_positiva   CHECK (potencia_contratada > 0)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
   COMMENT='Dimension de puntos de suministro (CUPS). Ref: G10-015 / DT-101-04 / DT-101-06';
 
@@ -184,17 +176,14 @@ CREATE TABLE IF NOT EXISTS version_modelo (
 
 CREATE TABLE IF NOT EXISTS fact_consumo_horario (
     id_registro      BIGINT        NOT NULL AUTO_INCREMENT COMMENT 'PK autoincremental generada por SCADA',
-    id_cliente_token VARCHAR(64)   NOT NULL COMMENT 'FK -> maestro_cliente. Cliente seudonimizado',
-    cups             VARCHAR(22)   NOT NULL COMMENT 'FK -> dim_punto_suministro',
+    id_cliente_token VARCHAR(64)   NOT NULL COMMENT 'Ref: maestro_cliente. Cliente seudonimizado',
+    cups             VARCHAR(22)   NOT NULL COMMENT 'Ref: dim_punto_suministro',
     ts_lectura       TIMESTAMP     NOT NULL COMMENT 'Marca de tiempo UTC. Granularidad horaria',
     consumo_kwh      DECIMAL(10,4) NOT NULL COMMENT 'Energia consumida en kWh. >= 0',
-    calidad_lectura  VARCHAR(10)   NOT NULL COMMENT 'FK -> ref_calidad_lectura. Dom: {REAL, ESTIMADA, CORREGIDA}',
-    CONSTRAINT pk_fact_consumo_horario   PRIMARY KEY (id_registro),
-    CONSTRAINT uq_fch_token_ts_cups      UNIQUE (id_cliente_token, ts_lectura, cups),
-    CONSTRAINT chk_consumo_no_negativo   CHECK (consumo_kwh >= 0),
-    CONSTRAINT fk_fch_cliente_token      FOREIGN KEY (id_cliente_token) REFERENCES maestro_cliente(id_cliente_token),
-    CONSTRAINT fk_fch_cups               FOREIGN KEY (cups)             REFERENCES dim_punto_suministro(cups),
-    CONSTRAINT fk_fch_calidad_lectura    FOREIGN KEY (calidad_lectura)  REFERENCES ref_calidad_lectura(codigo)
+    calidad_lectura  VARCHAR(10)   NOT NULL COMMENT 'Ref: ref_calidad_lectura. Dom: {REAL, ESTIMADA, CORREGIDA}',
+    CONSTRAINT pk_fact_consumo_horario PRIMARY KEY (id_registro),
+    CONSTRAINT uq_fch_token_ts_cups    UNIQUE (id_cliente_token, ts_lectura, cups),
+    CONSTRAINT chk_consumo_no_negativo CHECK (consumo_kwh >= 0)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
   COMMENT='Fact table de lecturas horarias de consumo electrico. Ref: G10-006/007 / CT-201 / DT-201';
 
@@ -205,18 +194,15 @@ CREATE TABLE IF NOT EXISTS fact_consumo_horario (
 
 CREATE TABLE IF NOT EXISTS fact_prevision_demanda (
     id_prevision     BIGINT        NOT NULL AUTO_INCREMENT COMMENT 'PK autoincremental',
-    id_cliente_token VARCHAR(64)   NOT NULL COMMENT 'FK -> maestro_cliente. Cliente seudonimizado',
-    codigo_zona      VARCHAR(10)   NOT NULL COMMENT 'FK -> dim_zona_geografica',
-    version_modelo   VARCHAR(50)   NOT NULL COMMENT 'FK -> version_modelo',
+    id_cliente_token VARCHAR(64)   NOT NULL COMMENT 'Ref: maestro_cliente. Cliente seudonimizado',
+    codigo_zona      VARCHAR(10)   NOT NULL COMMENT 'Ref: dim_zona_geografica',
+    version_modelo   VARCHAR(50)   NOT NULL COMMENT 'Ref: version_modelo',
     mes_prevision    DATE          NOT NULL COMMENT 'Primer dia del mes previsto (ISO 8601)',
     demanda_kwh      DECIMAL(12,4) NOT NULL COMMENT 'Energia prevista para el mes en kWh. >= 0',
     mape_modelo      DECIMAL(5,2)      NULL COMMENT 'MAPE del modelo en esta ejecucion. Si > 10, registro invalido',
     CONSTRAINT pk_fact_prevision_demanda PRIMARY KEY (id_prevision),
     CONSTRAINT uq_fpd_token_zona_mes     UNIQUE (id_cliente_token, codigo_zona, mes_prevision),
-    CONSTRAINT chk_demanda_no_negativa   CHECK (demanda_kwh >= 0),
-    CONSTRAINT fk_fpd_cliente_token      FOREIGN KEY (id_cliente_token) REFERENCES maestro_cliente(id_cliente_token),
-    CONSTRAINT fk_fpd_zona               FOREIGN KEY (codigo_zona)      REFERENCES dim_zona_geografica(codigo_zona),
-    CONSTRAINT fk_fpd_version_modelo     FOREIGN KEY (version_modelo)   REFERENCES version_modelo(version)
+    CONSTRAINT chk_demanda_no_negativa   CHECK (demanda_kwh >= 0)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
   COMMENT='Fact table de previsiones de demanda energetica. Ref: G10-014 / CT-701 / DT-701';
 
@@ -225,14 +211,9 @@ CREATE TABLE IF NOT EXISTS fact_prevision_demanda (
 -- INDICES ADICIONALES PARA RENDIMIENTO
 -- =============================================================
 
--- Busqueda por zona en consumo (filtros frecuentes en el modelo predictivo)
 CREATE INDEX idx_fch_cups        ON fact_consumo_horario (cups);
 CREATE INDEX idx_fch_ts_lectura  ON fact_consumo_horario (ts_lectura);
-
--- Busqueda por mes en prevision
 CREATE INDEX idx_fpd_mes         ON fact_prevision_demanda (mes_prevision);
 CREATE INDEX idx_fpd_zona        ON fact_prevision_demanda (codigo_zona);
-
--- Busqueda por tipo de cliente en maestro
 CREATE INDEX idx_mc_tipo_cliente ON maestro_cliente (tipo_cliente);
 CREATE INDEX idx_mc_estado       ON maestro_cliente (estado);

@@ -38,4 +38,4 @@ Proponer una arquitectura de datos para dar soporte al analisis. Debe incluir el
 | Datos de referencia | En revision |
 | Arquitectura (conceptual + logico + Mermaid) | En revision |
 | Modelo conceptual VP (SVG) | En revision |
-| DDL MySQL ejecutado en Spartan | Pendiente - ejecutar grupo10_ddl.sql |
+| DDL MySQL ejecutado en Spartan | En revision |

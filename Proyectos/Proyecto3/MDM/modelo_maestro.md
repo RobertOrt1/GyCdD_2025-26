@@ -117,6 +117,10 @@ Define que sistema tiene la ultima palabra sobre cada atributo en caso de confli
 
 ## 7. Diagrama conceptual (Visual Paradigm)
 
-[VP: exportar SVG aqui - modelo conceptual UML/ER con entidades Cliente, PuntoSuministro, ZonaGeografica y sus relaciones]
+![Modelo conceptual - Cliente, PuntoSuministro, ZonaGeografica](figuras/modelo_conceptual_v1.0.svg)
+
+## 8. Modelo fisico ejecutado en Spartan
+
+![Tablas creadas en Grupo10 - Spartan 172.20.48.70:3306](figuras/ModeladoFisico.jpeg)
 
 Ver modelo logico completo en [ArqDat/arquitectura.md](../ArqDat/arquitectura.md).

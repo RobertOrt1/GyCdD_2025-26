@@ -3,7 +3,7 @@
 **Identificador:** ET-REF-001 | **Version:** 1.0 | **Fecha:** 2026-05-01
 **Marco de referencia:** UNE 0078 - MDM
 
-> Los datos de referencia son dominios controlados que garantizan la integridad semantica del modelo. Cada valor tiene un codigo tecnico (usado en base de datos) y una etiqueta de negocio (usada en interfaces y reportes). Son coherentes con los dominios definidos en el diccionario P2.
+> Los datos de referencia son dominios controlados que garantizan la integridad semantica del modelo. Cada valor tiene un codigo tecnico (usado en base de datos) y una etiqueta de negocio (usada en interfaces y reportes). 
 
 ---
 
