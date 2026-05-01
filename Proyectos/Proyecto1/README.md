@@ -1,4 +1,4 @@
-# Proyecto 1 — Procesamiento del Dato y Gestión de Requisitos
+# Proyecto 1 - Procesamiento del Dato y Gestión de Requisitos
 
 **Empresa:** EnergiTech | **Asignatura:** Gobierno y Gestión del Dato - MUBDCN, UCLM
 **Marco de referencia:** UNE 0078 | **Sesión:** 9

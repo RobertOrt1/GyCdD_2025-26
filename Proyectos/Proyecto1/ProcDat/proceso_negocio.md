@@ -1,8 +1,8 @@
-# ProcDat — Descripción del Proceso de Negocio
+# ProcDat - Descripción del Proceso de Negocio
 
 **Identificador:** ET-PN-001 | **Versión:** 1.0
 **Proceso:** Cálculo de la Previsión de la Demanda Energética
-**Marco de referencia:** UNE 0078 — ProcDat.T1 / ProcDat.T2
+**Marco de referencia:** UNE 0078 - ProcDat.T1 / ProcDat.T2
 
 ---
 
