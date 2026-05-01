@@ -37,5 +37,5 @@ Proponer una arquitectura de datos para dar soporte al analisis. Debe incluir el
 | Modelo maestro MDM | En revision |
 | Datos de referencia | En revision |
 | Arquitectura (conceptual + logico + Mermaid) | En revision |
-| Modelo conceptual VP (SVG) | Pendiente - exportar desde Visual Paradigm |
+| Modelo conceptual VP (SVG) | En revision |
 | DDL MySQL ejecutado en Spartan | Pendiente - ejecutar grupo10_ddl.sql |
