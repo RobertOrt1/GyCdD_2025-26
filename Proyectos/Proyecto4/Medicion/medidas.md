@@ -194,3 +194,22 @@ SELECT
     / COUNT(*) AS M_ACC_02_exactitud_modelo_mape
 FROM Grupo10.fact_previsión_demanda;
 ```
+
+---
+
+## 4. Resultados de la medición
+
+Medición ejecutada sobre la base de datos Grupo10 en Spartan (172.20.48.70:3306). Fecha: 2026-05-02.
+
+| Medida | Resultado | Umbral | Nivel UNE 0081 | Estado |
+| :--- | :--- | :--- | :--- | :--- |
+| M-COM-01 | 100% | >= 95% | 5 - Excelente | OK |
+| M-COM-02 | 70% | >= 90% | 3 - Buena | ALERTA |
+| M-CON-01 | 100% | 100% | 5 - Excelente | OK |
+| M-CON-02 | 100% | 100% | 5 - Excelente | OK |
+| M-ACC-01 | 92,31% | >= 98% | 4 - Muy buena | ALERTA |
+| M-ACC-02 | 100% | 100% | 5 - Excelente | OK |
+
+**M-COM-02 (70%) — por debajo del umbral minimo.** 3 de los 10 clientes del golden record tienen al menos uno de los atributos obligatorios con valor NULL (`id_nacional` o `email_verificado`). Esto impide que el motor MDM aplique las reglas RM-01 y RM-02 sobre esos registros, que quedan bloqueados en estado `REVISION_MANUAL` hasta que el Data Steward complete los datos en el sistema de autoridad correspondiente (CRM Salesforce).
+
+**M-ACC-01 (92,31%) — requiere atención, no bloquea.** Se han detectado 2 lecturas anomalas: un pico de 9.999 kWh y un consumo negativo. Ambas seran marcadas como `ESTIMADA` por el control TV-02 del pipeline ETL y sustituidas por el valor interpolado. El proceso ET-PN-001 puede continuar, pero el Data Steward debe revisar el origen de las lecturas anomalas antes del siguiente ciclo de ingesta.
