@@ -23,4 +23,4 @@ El objetivo de esta practica transversal es abordar, siguiendo los procesos de g
 | [Proyecto 2](Proyectos/Proyecto2/README.md) | 10 | Gestion de Metadatos y Ciclo de Vida del Dato | UNE 0087 - MetDat | En revision |
 | [Proyecto 3](Proyectos/Proyecto3/README.md) | 11 | Gestion de Datos Maestros y Arquitectura de Datos | UNE 0078 - MDM + ArqDat | En revision |
 | [Proyecto 4](Proyectos/Proyecto4/README.md) | 12 | Medicion de la Calidad del Dato | UNE 0081 - CalDat | En revision |
-
+| [Proyecto 5](Proyectos/Proyecto5/README.md) | 13 | Control y Monitorizacion de la Calidad del Dato | UNE 0079 - CtrlDQ | En revision |
