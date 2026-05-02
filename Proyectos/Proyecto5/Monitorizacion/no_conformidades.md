@@ -15,7 +15,7 @@
 
 ---
 
-## 2. Detalle de NC-001 — Completitud de registros
+## 2. Detalle de NC-001 - Completitud de registros
 
 **Evidencia:** 3 de los 10 clientes del golden record tienen `id_nacional` o `email_verificado` con valor NULL. Esto impide que el motor MDM aplique las reglas RM-01 y RM-02, lo que bloquea la reconciliacion de identidades con los sistemas fuente.
 
@@ -31,9 +31,9 @@
 
 ---
 
-## 3. Detalle de NC-002 — Exactitud del rango de consumo
+## 3. Detalle de NC-002 - Exactitud del rango de consumo
 
-**Evidencia:** 2 lecturas anómalas detectadas — un pico de 9.999 kWh (probable error de sensor) y un consumo negativo (probable error de transmision). Las dos lecturas afectan al cálculo de la media histórica del punto de suministro correspondiente.
+**Evidencia:** 2 lecturas anómalas detectadas - un pico de 9.999 kWh (probable error de sensor) y un consumo negativo (probable error de transmision). Las dos lecturas afectan al cálculo de la media histórica del punto de suministro correspondiente.
 
 **Sistema de origen afectado:** SCADA.
 

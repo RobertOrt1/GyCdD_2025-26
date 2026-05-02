@@ -141,7 +141,7 @@ ORDER BY fch.ts_lectura;
 | Herramienta | OpenMetadata + pipeline ETL (control TV-01) |
 | Umbral | >= 95% |
 
-**Pasos del procedimiento:** ejecutar M-COM-01 al finalizar la ingesta. Si el resultado es >= 95%, continuar. Si es < 95%, rechazar el lote y notificar al responsable de calidad — aplica TV-01 del pipeline ETL del Proyecto 2.
+**Pasos del procedimiento:** ejecutar M-COM-01 al finalizar la ingesta. Si el resultado es >= 95%, continuar. Si es < 95%, rechazar el lote y notificar al responsable de calidad - aplica TV-01 del pipeline ETL del Proyecto 2.
 
 ---
 
