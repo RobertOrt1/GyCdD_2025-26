@@ -186,7 +186,7 @@ ORDER BY fch.ts_lectura;
 | Dataset | `fact_previsión_demanda` |
 | Responsable | Analista de Demanda |
 | Frecuencia | Mensual - tras la ejecución del modelo IA (Actividad 3 del BPMN) |
-| Herramienta | MLflow (registro de metricas) + OpenMetadata |
+| Herramienta | OpenMetadata |
 | Umbral | 100% (tolerancia cero sobre registros publicados) |
 
-**Pasos del procedimiento:** el modelo registra el MAPE en MLflow al finalizar cada ejecución. Si el MAPE supera el 10%, el resultado no se inserta en `fact_previsión_demanda` y se escala a revisión del equipo de Analítica. M-ACC-02 verifica que todos los registros publicados cumplen el umbral.
+**Pasos del procedimiento:** al finalizar cada ejecución del modelo, el MAPE queda registrado en el campo `mape_modelo` de `fact_previsión_demanda`. Si el MAPE supera el 10%, el resultado no se inserta y se escala a revisión del equipo de Analítica. M-ACC-02 verifica que todos los registros publicados cumplen el umbral.

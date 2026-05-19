@@ -101,7 +101,6 @@ Este documento cruza los requisitos del enunciado con los artefactos del reposit
 | OpenMetadata 1.6.7 | Glosario de negocio, catalogo de activos (P2), soporte tests de calidad (P5) |
 | MySQL 8 / Spartan | DDL de 12 tablas en BD Grupo10 (P3), ejecucion de queries de medicion (P4) |
 | DBeaver | Conexion a Spartan, ejecucion de medidas, capturas de evidencia (P3, P4) |
-| MLflow | Registro de MAPE del modelo predictivo - M-ACC-02 (P4, P5) |
 | Mermaid | Diagramas en Markdown: flowchart BPMN simplificado (P1), classDiagram logico (P3), flujo medicion (P5), escalera madurez (P6) |
 | Git / GitHub | Control de versiones en rama develop |
 | VS Code | Edicion de Markdown con preview Mermaid (Ctrl+Shift+V) |

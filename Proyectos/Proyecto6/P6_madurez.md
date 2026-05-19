@@ -105,4 +105,4 @@ El nivel 2 exige que los procesos no solo se realicen, sino que se gestionen: lo
 
 La práctica transversal ha servido como iniciativa coyuntural que ha generado los componentes estructurales base del gobierno del dato en EnergiTech: un modelo de proceso documentado, un repositorio de metadatos, un MDM inicial y un sistema de medición de calidad. Estos componentes son la base imprescindible para cualquier nivel de madurez superior.
 
-El salto del nivel actual al nivel 2 no requiere grandes inversiones tecnológicas - las herramientas ya están desplegadas (OpenMetadata, MySQL, MLflow). Requiere principalmente disciplina organizativa: ejecutar los procedimientos de forma sistemática, asignar responsabilidades formales y cerrar las dos no conformidades identificadas en el P5.
+El salto del nivel actual al nivel 2 no requiere grandes inversiones tecnológicas - las herramientas ya están desplegadas (OpenMetadata, MySQL Spartan, GitHub). Requiere principalmente disciplina organizativa: ejecutar los procedimientos de forma sistemática, asignar responsabilidades formales y cerrar las dos no conformidades identificadas en el P5.
