@@ -33,7 +33,7 @@ Definir requisitos de negocio (que espera la empresa del sistema predictivo), re
 
 | Entregable | Estado |
 | :--- | :--- |
-| Diagrama BPMN (Visual Paradigm) | En revision |
-| Descripcion del proceso de negocio | En revision |
-| Catalogo de requisitos | En revision |
-| Gestion de configuracion | En revision |
+| Diagrama BPMN (Visual Paradigm) | Aprobado |
+| Descripcion del proceso de negocio | Aprobado |
+| Catalogo de requisitos | Aprobado |
+| Gestion de configuracion | Aprobado |

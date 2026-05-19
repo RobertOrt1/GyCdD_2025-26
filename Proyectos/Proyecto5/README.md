@@ -36,7 +36,7 @@ Registrar las no conformidades NC-001 y NC-002 con causa raiz, accion correctora
 
 | Entregable | Estado |
 | :--- | :--- |
-| Procedimientos de medicion | En revision |
-| Cuadro de mandos | En revision |
-| No conformidades | En revision |
-| Gestion de configuracion | En revision |
+| Procedimientos de medicion | Aprobado |
+| Cuadro de mandos | Aprobado |
+| No conformidades | Aprobado |
+| Gestion de configuracion | Aprobado |

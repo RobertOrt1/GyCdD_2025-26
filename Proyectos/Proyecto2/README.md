@@ -26,11 +26,11 @@ La fuente de verdad del glosario y el catálogo es la instancia de **OpenMetadat
 
 | Entregable | Estado | Notas |
 |:---|:---|:---|
-| Glosario de negocio |  En revisión | Cargado en OpenMetadata con estado Draft - pendiente aprobar |
-| Catálogo de datos |  En revisión | CT-101 a CT-701 pendientes de cargar en OpenMetadata |
-| Diccionario de datos |  En revisión | DT-301 a DT-701 pendientes de validación técnica |
-| Matriz de trazabilidad |  En revisión | |
-| Pipeline y políticas |  En revisión | |
+| Glosario de negocio |  Aprobado | Cargado en OpenMetadata con estado Draft - pendiente aprobar |
+| Catálogo de datos |  Aprobado | CT-101 a CT-701 pendientes de cargar en OpenMetadata |
+| Diccionario de datos |  Aprobado | DT-301 a DT-701 pendientes de validación técnica |
+| Matriz de trazabilidad |  Aprobado | |
+| Pipeline y políticas |  Aprobado | |
 
 ## Pendientes en OpenMetadata
 

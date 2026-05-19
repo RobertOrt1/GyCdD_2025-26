@@ -29,6 +29,6 @@ Especificar las propiedades medibles (Com-I-1/2, Con-I-1/2, Acc-I-2/3) con sus f
 
 | Entregable | Estado |
 | :--- | :--- |
-| Modelo de calidad (modelo_calidad.md) | En revisión |
-| Métodos de medición (medidas.md) | En revisión |
-| Gestión de configuración | En revisión |
+| Modelo de calidad (modelo_calidad.md) | Aprobado |
+| Métodos de medición (medidas.md) | Aprobado |
+| Gestión de configuración | Aprobado |

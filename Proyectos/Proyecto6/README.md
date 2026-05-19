@@ -29,6 +29,6 @@ Definir las acciones necesarias para alcanzar el Nivel 1 (Realizado) y, a contin
 
 | Entregable | Estado |
 | :--- | :--- |
-| Autoevaluación de madurez | En revisión |
-| Plan de mejora | En revisión |
-| Gestión de configuración | En revisión |
+| Autoevaluación de madurez | Aprobado |
+| Plan de mejora | Aprobado |
+| Gestión de configuración | Aprobado |

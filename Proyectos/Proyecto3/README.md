@@ -34,8 +34,8 @@ Proponer una arquitectura de datos para dar soporte al analisis. Debe incluir el
 
 | Entregable | Estado |
 | :--- | :--- |
-| Modelo maestro MDM | En revision |
-| Datos de referencia | En revision |
-| Arquitectura (conceptual + logico + Mermaid) | En revision |
-| Modelo conceptual VP (SVG) | En revision |
-| DDL MySQL ejecutado en Spartan | En revision |
+| Modelo maestro MDM | Aprobado |
+| Datos de referencia | Aprobado |
+| Arquitectura (conceptual + logico + Mermaid) | Aprobado |
+| Modelo conceptual VP (SVG) | Aprobado |
+| DDL MySQL ejecutado en Spartan | Aprobado |
