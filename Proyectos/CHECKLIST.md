@@ -43,7 +43,7 @@ Este documento cruza los requisitos del enunciado con los artefactos del reposit
 | 3.1 | Modelo maestro (golden record, reglas matching) | `Proyecto3/MDM/modelo_maestro.md` (RM-01/02/03) | Visual Paradigm + Markdown | Aprobado |
 | 3.2 | Datos de referencia (dominios controlados) | `Proyecto3/MDM/datos_referencia.md` (REF-01 a REF-07) | Markdown | Aprobado |
 | 3.3 | Arquitectura conceptual, logica y fisica | `Proyecto3/ArqDat/arquitectura.md` | Mermaid classDiagram | Aprobado |
-| 3.4 | Diagrama ER exportado como SVG | `Proyecto3/MDM/figuras/modelo_conceptual_er.svg` | Visual Paradigm | Aprobado |
+| 3.4 | Diagrama ER exportado como SVG | `Proyecto3/MDM/figuras/modelo_conceptual_v1.0.svg` | Visual Paradigm | Aprobado |
 | 3.5 | DDL ejecutado en base de datos real | `Proyecto3/ArqDat/scripts/grupo10_ddl.sql` (12 tablas) | MySQL 8 - Spartan | Aprobado |
 | 3.6 | Evidencia de tablas en BD | `Proyecto3/MDM/figuras/ModeladoFisico.jpeg` | DBeaver | Aprobado |
 | 3.7 | Gestion de la configuracion | `Proyecto3/ConfDat/gestion_configuracion.md` | Markdown | Aprobado |
