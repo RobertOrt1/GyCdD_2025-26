@@ -9,9 +9,9 @@
 
 | ID Artefacto | Nombre | Tipo | Versión | Fecha | Estado | Notas |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| ET-CTRL-PROC-001 | procedimientos_medición.md | Documento | 1.0 | 2026-05-02 | En revisión | Requisitos CtrlDQ.T1, flujo Mermaid, seis procedimientos PROC-xxx con queries de diagnóstico |
-| ET-CTRL-CMD-001 | cuadro_mandos.md | Documento | 1.1 | 2026-05-02 | En revisión | Seccion OpenMetadata ampliada con capturas y pasos de configuración de tests |
-| ET-CTRL-NC-001 | no_conformidades.md | Documento | 1.0 | 2026-05-02 | En revisión | NC-001 y NC-002 con causa raíz, acciónes correctoras y lección aprendida |
+| ET-CTRL-PROC-001 | procedimientos_medición.md | Documento | 1.0 | 2026-05-02 | Aprobado | Requisitos CtrlDQ.T1, flujo Mermaid, seis procedimientos PROC-xxx con queries de diagnóstico |
+| ET-CTRL-CMD-001 | cuadro_mandos.md | Documento | 1.1 | 2026-05-02 | Aprobado | Seccion OpenMetadata ampliada con capturas y pasos de configuración de tests |
+| ET-CTRL-NC-001 | no_conformidades.md | Documento | 1.0 | 2026-05-02 | Aprobado | NC-001 y NC-002 con causa raíz, acciónes correctoras y lección aprendida |
 
 ---
 

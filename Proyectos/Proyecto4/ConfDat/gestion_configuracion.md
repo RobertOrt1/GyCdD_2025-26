@@ -9,8 +9,8 @@
 
 | ID Artefacto | Nombre | Tipo | Versión | Fecha | Estado | Notas |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| ET-DQ-MC-001 | modelo_calidad.md | Documento | 1.0 | 2026-05-01 | En revisión | Características Com-I, Con-I, Acc-I; escala UNE 0081; diagrama Mermaid |
-| ET-DQ-MED-001 | medidas.md | Documento | 1.1 | 2026-05-02 | En revisión | Resultados de medición añadidos; alertas M-COM-02 y M-ACC-01 |
+| ET-DQ-MC-001 | modelo_calidad.md | Documento | 1.0 | 2026-05-01 | Aprobado | Características Com-I, Con-I, Acc-I; escala UNE 0081; diagrama Mermaid |
+| ET-DQ-MED-001 | medidas.md | Documento | 1.1 | 2026-05-02 | Aprobado | Resultados de medición añadidos; alertas M-COM-02 y M-ACC-01 |
 
 ---
 

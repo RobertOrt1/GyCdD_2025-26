@@ -9,8 +9,8 @@
 
 | ID Artefacto | Nombre | Tipo | Versión | Fecha | Estado | Notas |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| ET-MAD-AE-001 | autoevaluacion.md | Documento | 1.0 | 2026-05-02 | En revisión | Modelo MAMD, escalera Mermaid, evaluación F/L/P/N de ProcDat/MetDat/MDM/PlanDQ/CtrlDQ |
-| ET-MAD-PM-001 | plan_mejora.md | Documento | 1.0 | 2026-05-02 | En revisión | Acciones para NM1 y NM2 con responsables y plazos |
+| ET-MAD-AE-001 | autoevaluacion.md | Documento | 1.0 | 2026-05-02 | Aprobado | Modelo MAMD, escalera Mermaid, evaluación F/L/P/N de ProcDat/MetDat/MDM/PlanDQ/CtrlDQ |
+| ET-MAD-PM-001 | plan_mejora.md | Documento | 1.0 | 2026-05-02 | Aprobado | Acciones para NM1 y NM2 con responsables y plazos |
 
 ---
 

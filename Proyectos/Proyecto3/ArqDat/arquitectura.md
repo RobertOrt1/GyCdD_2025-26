@@ -10,8 +10,6 @@
 
 El modelo conceptual define las entidades de negocio y sus relaciones, independientemente de la implementacion fisica. Se exporta como diagrama UML/ER desde Visual Paradigm.
 
-[VP: exportar SVG aqui - diagrama ER con entidades Cliente, PuntoSuministro, ZonaGeografica, ConsumoHorario, PrevisionDemanda, VersionModelo]
-
 ### Entidades y relaciones
 
 | Entidad | Descripcion | Ref. Glosario P2 |

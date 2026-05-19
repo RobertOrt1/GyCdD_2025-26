@@ -10,6 +10,8 @@
 
 Los datos que alimentan el proceso de previsión de demanda energetica de EnergiTech presentan problemas conocidos: registros de clientes duplicados en tres sistemas distintos (CRM Salesforce, SAP-ISU y ERP de Mantenimiento), lecturas de consumo con valores ausentes o anómalos, y datos meteorologicos que en ocasiones llegan con retraso. Todo ello se traduce en pérdida de confianza del equipo de Operaciones en los resultados del modelo predictivo y en decisiones de distribución potencialmente erróneas.
 
+Para que esta medición sea útil, necesita un punto de referencia concreto: saber qué valor o rango es aceptable y para qué uso. Ese punto de referencia lo proporcionan los requisitos documentados en el Proyecto 1 - RC-01 (completitud de las series de consumo horario), RC-02 (exactitud de las lecturas SCADA), RC-03 (consistencia de identidades entre sistemas), RC-04 (disponibilidad temporal) y RC-05 (confidencialidad) -. Sin ellos, detectar un valor nulo o una lectura anómala seria una observacion tecnica sin consecuencias; con ellos, se convierte en una no conformidad que puede bloquear el proceso. Son estos requisitos los que justifican la selección de características de calidad del apartado siguiente.
+
 El objetivo de este proyecto es medir el estado actual de la calidad del dato para determinar si es suficiente de acuerdo al apetito de riesgo de EnergiTech para garantizar el exito del proceso ET-PN-001. Se aplica el marco de evaluación de UNE 0081.
 
 ---

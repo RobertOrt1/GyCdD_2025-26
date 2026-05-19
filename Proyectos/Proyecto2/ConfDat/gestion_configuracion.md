@@ -9,12 +9,12 @@
 
 | ID Artefacto | Nombre | Tipo | Versión | Fecha | Estado | Notas |
 |:---|:---|:---|:---|:---|:---|:---|
-| ET-GLOS-001 | glosario.md | Documento | 1.0 | 2026-05-01 | En revisión | 20 términos G10-001 a G10-020 desde OpenMetadata |
-| ET-CAT-001 | catalogo.md | Documento | 1.0 | 2026-05-01 | En revisión | 7 activos CT-101 a CT-701 |
-| ET-DIC-001 | diccionario.md | Documento | 1.0 | 2026-05-01 | En revisión | DT-301 a DT-701 pendientes de validación técnica |
-| ET-TRAZ-001 | trazabilidad.md | Documento | 1.0 | 2026-05-01 | En revisión | Cruce glosario ↔ catálogo ↔ diccionario ↔ BPMN |
-| ET-CV-001 | ciclo_vida.md | Documento | 1.0 | 2026-05-01 | En revisión | Pipeline 4 etapas con controles TV-01 a TV-05 |
-| ET-POL-001 | politicas.md | Documento | 1.0 | 2026-05-01 | En revisión | POL-CV-01 a POL-CV-06 |
+| ET-GLOS-001 | glosario.md | Documento | 1.0 | 2026-05-01 | Aprobado | 20 términos G10-001 a G10-020 desde OpenMetadata |
+| ET-CAT-001 | catalogo.md | Documento | 1.0 | 2026-05-01 | Aprobado | 7 activos CT-101 a CT-701 |
+| ET-DIC-001 | diccionario.md | Documento | 1.0 | 2026-05-01 | Aprobado | DT-301 a DT-701 pendientes de validación técnica |
+| ET-TRAZ-001 | trazabilidad.md | Documento | 1.0 | 2026-05-01 | Aprobado | Cruce glosario ↔ catálogo ↔ diccionario ↔ BPMN |
+| ET-CV-001 | ciclo_vida.md | Documento | 1.0 | 2026-05-01 | Aprobado | Pipeline 4 etapas con controles TV-01 a TV-05 |
+| ET-POL-001 | politicas.md | Documento | 1.0 | 2026-05-01 | Aprobado | POL-CV-01 a POL-CV-06 |
 | ET-GLOS-CSV | EnergiTech_Glosario_OpenMetadata_v2.csv | Datos | v2 | 2026-05-01 | Aprobado | Exportado de OpenMetadata - fuente de verdad |
 
 ---

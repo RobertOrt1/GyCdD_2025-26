@@ -9,9 +9,9 @@
 
 | ID | Nombre | Tipo | Versión | Fecha | Autor | Estado | Notas |
 |:---|:---|:---|:---|:---|:---|:---|:---|
-| ET-PN-001 | Descripción del proceso de negocio | Documento | 1.0 | 2026-05-01 | - | En revisión | Documento principal del proceso |
-| ET-PN-001-BPMN | Diagrama BPMN - Previsión de demanda | Diagrama (SVG/VPP) | 1.0 | 2026-05-01 | - | En revisión | Elaborado en Visual Paradigm |
-| ET-CAT-REQ-001 | Catálogo de requisitos | Documento | 1.0 | 2026-05-01 | - | En revisión | RN, RD, RC y RS |
+| ET-PN-001 | Descripción del proceso de negocio | Documento | 1.0 | 2026-05-01 | - | Aprobado | Documento principal del proceso |
+| ET-PN-001-BPMN | Diagrama BPMN - Previsión de demanda | Diagrama (SVG/VPP) | 1.0 | 2026-05-01 | - | Aprobado | Elaborado en Visual Paradigm |
+| ET-CAT-REQ-001 | Catálogo de requisitos | Documento | 1.0 | 2026-05-01 | - | Aprobado | RN, RD, RC y RS |
 | ET-MOD-PRED-001 | Modelo IA - Previsión de demanda | Modelo / Script | 0.1-beta | - | - | En desarrollo | Hiperparámetros pendientes de documentar |
 
 ---

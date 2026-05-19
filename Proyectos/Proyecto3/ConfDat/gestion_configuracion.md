@@ -9,11 +9,11 @@
 
 | ID Artefacto | Nombre | Tipo | Version | Fecha | Estado | Notas |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| ET-MDM-001 | modelo_maestro.md | Documento | 1.0 | 2026-05-01 | En revision | Golden record, matching RM-01/02/03, matriz de autoridad |
-| ET-REF-001 | datos_referencia.md | Documento | 1.0 | 2026-05-01 | En revision | Dominios controlados REF-01 a REF-07 |
-| ET-ARQ-001 | arquitectura.md | Documento | 1.0 | 2026-05-01 | En revision | Modelos conceptual, logico, fisico y diagrama Mermaid |
-| ET-ARQ-001-VP | Modelo conceptual ER (SVG) | Diagrama | 1.0 | 2026-05-01 | En revision | Exportado desde Visual Paradigm Online |
-| ET-ARQ-DDL | grupo10_ddl.sql | Script SQL | 1.1 | 2026-05-01 | En revision | Ejecutado en Spartan 172.20.48.70:3306 / Grupo10. FK omitidas por permisos |
+| ET-MDM-001 | modelo_maestro.md | Documento | 1.0 | 2026-05-01 | Aprobado | Golden record, matching RM-01/02/03, matriz de autoridad |
+| ET-REF-001 | datos_referencia.md | Documento | 1.0 | 2026-05-01 | Aprobado | Dominios controlados REF-01 a REF-07 |
+| ET-ARQ-001 | arquitectura.md | Documento | 1.0 | 2026-05-01 | Aprobado | Modelos conceptual, logico, fisico y diagrama Mermaid |
+| ET-ARQ-001-VP | Modelo conceptual ER (SVG) | Diagrama | 1.0 | 2026-05-01 | Aprobado | Exportado desde Visual Paradigm Online |
+| ET-ARQ-DDL | grupo10_ddl.sql | Script SQL | 1.1 | 2026-05-01 | Aprobado | Ejecutado en Spartan 172.20.48.70:3306 / Grupo10. FK omitidas por permisos |
 
 ---
 
